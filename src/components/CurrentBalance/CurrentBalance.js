@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
-Icon.loadFont();
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import * as S from './styles';
 

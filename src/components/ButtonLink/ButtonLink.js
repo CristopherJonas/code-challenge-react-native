@@ -1,11 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
-Icon.loadFont();
-
 import * as S from './styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ButtonLink = ({icon, text, navigateTo}) => {
   const navigation = useNavigation();
