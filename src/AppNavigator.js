@@ -11,10 +11,22 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" headerMode="none">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="NewTransaction" component={NewTransaction} />
-        <Stack.Screen name="Transactions" component={Transactions} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{headerShown: false, title: 'Início'}}
+        />
+        <Stack.Screen
+          name="NewTransaction"
+          component={NewTransaction}
+          options={{title: 'Nova Transação'}}
+        />
+        <Stack.Screen
+          name="Transactions"
+          component={Transactions}
+          options={{title: 'Lista de Transações'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
