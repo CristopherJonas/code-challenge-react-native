@@ -6,3 +6,7 @@ export const TransactionsScreenWrapper = styled.View`
   align-items: center;
   padding: 10px 10px 0 10px;
 `;
+
+export const NoTransactionsSavedText = styled.Text`
+  font-size: 20px;
+`;
