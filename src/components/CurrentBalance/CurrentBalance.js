@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {MaskService} from 'react-native-masked-text';
 
 import * as S from './styles';
 
 const CurrentBalance = ({balance}) => {
-  const [balanceValue, setBalanceValue] = useState(balance);
+  const [showBalance, setShowBalance] = useState(true);
   const [iconEye, setIconEye] = useState('eye-slash');
 
   const hideShowBalance = () => {
-    if (balanceValue !== '######') {
-      setBalanceValue('######');
+    if (showBalance) {
+      setShowBalance(false);
       setIconEye('eye');
     } else {
-      setBalanceValue(balance);
+      setShowBalance(true);
       setIconEye('eye-slash');
     }
   };
@@ -22,7 +23,13 @@ const CurrentBalance = ({balance}) => {
       <S.CurrentBalanceText>Seu saldo atual é</S.CurrentBalanceText>
       <View style={{flexDirection: 'row'}}>
         <S.CurrentBalanceValue testID={'balanceValue'}>
-          {balanceValue}
+          {showBalance
+            ? MaskService.toMask('money', balance, {
+                unit: balance >= 0 ? 'R$' : 'R$-',
+                separator: ',',
+                delimiter: '.',
+              })
+            : '######'}
         </S.CurrentBalanceValue>
         <S.ShowHideBalanceButton
           onPress={() => hideShowBalance()}

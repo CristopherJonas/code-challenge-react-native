@@ -2,6 +2,7 @@ import React from 'react';
 import transactionTypeEnum from '../../common/TransactionTypeEnum';
 import * as S from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {MaskService} from 'react-native-masked-text';
 
 const TransactionCard = ({type, description, value}) => {
   const transactionType =
@@ -31,7 +32,13 @@ const TransactionCard = ({type, description, value}) => {
         </S.TransactionDescriptionText>
       </S.TransactionDescriptionWrapper>
       <S.TransactionValueWrapper color={transactionType.color}>
-        <S.TransactionValueText>{value}</S.TransactionValueText>
+        <S.TransactionValueText>
+          {MaskService.toMask('money', value, {
+            unit: 'R$',
+            separator: ',',
+            delimiter: '.',
+          })}
+        </S.TransactionValueText>
       </S.TransactionValueWrapper>
     </S.CardWrapper>
   );
