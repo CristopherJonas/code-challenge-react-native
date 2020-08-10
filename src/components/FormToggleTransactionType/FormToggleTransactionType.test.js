@@ -5,7 +5,9 @@ import FormToggleTransactionType from './FormToggleTransactionType';
 
 describe('New Transaction screen -> toggle Transaction type', () => {
   test('transaction type must be initialized as DECREMENT and its text background color must be red(#d94343) and INCREMENT text background color must be gray(#ccc)', async () => {
-    const {getByTestId} = render(<FormToggleTransactionType />);
+    const {getByTestId} = render(
+      <FormToggleTransactionType getTransactionFields={jest.fn((x) => x)} />,
+    );
 
     await waitFor(
       () =>

@@ -3,16 +3,17 @@ import {Text, TextInput} from 'react-native';
 
 import * as S from './styles';
 
-const FormTransactionDescription = () => {
-  const [transactionDescription, setTransactionDescription] = useState(
-    'description',
-  );
+const FormTransactionDescription = ({getTransactionFields}) => {
+  const [transactionDescription, setTransactionDescription] = useState('');
 
   return (
     <S.Wrapper>
       <Text>Insira a descrição abaixo</Text>
       <S.DescriptionInput
-        onChangeText={(text) => setTransactionDescription(text)}
+        onChangeText={(text) => {
+          setTransactionDescription(text);
+          getTransactionFields('description', text);
+        }}
         value={transactionDescription}
         placeholder={'descrição'}
       />

@@ -1,10 +1,23 @@
 import React, {useState} from 'react';
 import {Switch} from 'react-native';
+import transactionTypeEnum from '../../common/TransactionTypeEnum';
 
 import * as S from './styles';
-const FormToggleTransactionType = () => {
+const FormToggleTransactionType = ({getTransactionFields}) => {
   const [isIncrement, setIsIncrement] = useState(false);
-  const toggleSwitch = () => setIsIncrement((previousState) => !previousState);
+  getTransactionFields(
+    'type',
+    isIncrement ? transactionTypeEnum.INCREMENT : transactionTypeEnum.DECREMENT,
+  );
+  const toggleSwitch = () => {
+    setIsIncrement((previousState) => !previousState);
+    getTransactionFields(
+      'type',
+      !isIncrement
+        ? transactionTypeEnum.INCREMENT
+        : transactionTypeEnum.DECREMENT,
+    );
+  };
   return (
     <S.Wrapper>
       <S.DecrementText
