@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Text} from 'react-native';
 
 import * as S from './styles';
 
-const FormTransactionValue = ({getTransactionFields}) => {
-  const [transactionValue, setTransactionValue] = useState(0);
-
+const FormTransactionValue = ({updateField, value}) => {
   return (
     <S.Wrapper>
       <Text>Insira o valor abaixo</Text>
@@ -13,10 +11,9 @@ const FormTransactionValue = ({getTransactionFields}) => {
         <S.ValueInput
           type={'money'}
           testID={'textInputMask'}
-          value={transactionValue}
+          value={value}
           onChangeText={(text) => {
-            setTransactionValue(text);
-            getTransactionFields('value', text);
+            updateField(text);
           }}
         />
       </S.FieldWrapper>

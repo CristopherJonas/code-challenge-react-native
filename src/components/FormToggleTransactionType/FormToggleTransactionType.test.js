@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-native';
-import {fireEvent, render, waitFor} from '@testing-library/react-native';
+import {render, waitFor} from '@testing-library/react-native';
 import FormToggleTransactionType from './FormToggleTransactionType';
 
 describe('New Transaction screen -> toggle Transaction type', () => {

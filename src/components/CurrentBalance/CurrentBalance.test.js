@@ -6,7 +6,7 @@ import CurrentBalance from './CurrentBalance';
 describe('Home Screen CurrentBalance', () => {
   test('clicking in slashed eye, the balance is hiden', async () => {
     const {getByTestId, queryByTestId} = render(
-      <CurrentBalance balance={'19,90'} />,
+      <CurrentBalance balance={19.9} />,
     );
 
     const buttonIcon = getByTestId('eyeButton');
@@ -19,7 +19,7 @@ describe('Home Screen CurrentBalance', () => {
 
   test('clicking in open eye, the balance is shown', async () => {
     const {getByTestId, queryByTestId} = render(
-      <CurrentBalance balance={'19,90'} />,
+      <CurrentBalance balance={19.9} />,
     );
 
     const buttonIcon = getByTestId('eyeButton');
@@ -27,7 +27,7 @@ describe('Home Screen CurrentBalance', () => {
     fireEvent.press(buttonIcon);
 
     await waitFor(() =>
-      expect(queryByTestId('balanceValue').props.children).toBe('19,90'),
+      expect(queryByTestId('balanceValue').props.children).toBe('R$19,90'),
     );
   });
 });

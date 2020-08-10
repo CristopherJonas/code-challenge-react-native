@@ -63,6 +63,7 @@ const NewTransaction = () => {
 
         <S.SaveButtonWrapper>
           <S.SaveButton
+            testID={'saveButton'}
             onPress={() => saveNewTransaction()}
             disabled={value === 0 || description === ''}
             color={value === 0 || description === '' ? '#ccc' : '#159ce4'}>
