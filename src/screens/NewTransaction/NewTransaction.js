@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import {KeyboardAvoidingView, Platform} from 'react-native';
 import FormToggleTransactionType from '../../components/FormToggleTransactionType/FormToggleTransactionType';
 import FormTransactionDescription from '../../components/FormTransactionDescription/FormTransactionDescription';
 import FormTransactionValue from '../../components/FormTransactionValue/FormTransactionValue';
-import {storeData, getData, removeValue} from '../../database/database';
+import {TransactionContext} from '../../Context';
+import {MaskService} from 'react-native-masked-text';
 
 import * as S from './styles';
 
@@ -13,20 +14,10 @@ const NewTransaction = () => {
     value: 0,
     description: '',
   });
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await getData();
-      setData(result);
-    };
-    fetchData();
-  }, []);
+  const {updateTransactions} = useContext(TransactionContext);
 
   const saveNewTransaction = () => {
-    let savedTransactions = data;
-    savedTransactions.unshift(newTransaction);
-    storeData(savedTransactions);
-    debugger;
+    updateTransactions(newTransaction);
   };
 
   const getTransactionFields = (key, value) => {
@@ -36,7 +27,7 @@ const NewTransaction = () => {
         auxTrans.type = value;
         break;
       case 'value':
-        auxTrans.value = value;
+        auxTrans.value = MaskService.toRawValue('money', value);
         break;
       case 'description':
         auxTrans.description = value;
