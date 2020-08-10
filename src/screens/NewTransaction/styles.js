@@ -12,7 +12,7 @@ export const SaveButtonWrapper = styled.View`
 `;
 
 export const SaveButton = styled.TouchableOpacity`
-  background-color: #159ce4;
+  background-color: ${(props) => props.color};
   width: 300px;
   height: 50px;
   align-items: center;
