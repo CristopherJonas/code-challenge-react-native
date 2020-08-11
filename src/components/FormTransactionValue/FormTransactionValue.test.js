@@ -23,4 +23,17 @@ describe('New Transaction screen -> input Transaction value', () => {
       expect(getByTestId('textInputMask').props.value).toBe('R$1.234,56'),
     );
   });
+
+  test('transaction value must be max 999.999.999,99', async () => {
+    const {getByTestId} = render(
+      <FormTransactionValue
+        updateField={jest.fn((x) => x)}
+        value={999999999.99}
+      />,
+    );
+
+    await waitFor(() =>
+      expect(getByTestId('textInputMask').props.maxLength).toBe(16),
+    );
+  });
 });

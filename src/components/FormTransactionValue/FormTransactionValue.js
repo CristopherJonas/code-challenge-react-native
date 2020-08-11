@@ -12,11 +12,13 @@ const FormTransactionValue = ({updateField, value}) => {
           type={'money'}
           testID={'textInputMask'}
           value={value}
+          maxLength={16}
           onChangeText={(text) => {
             updateField(text);
           }}
         />
       </S.FieldWrapper>
+      <Text>*Valor máximo de R$999.999.999,99</Text>
     </S.Wrapper>
   );
 };
