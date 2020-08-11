@@ -11,10 +11,12 @@ const FormTransactionDescription = ({updateField, value}) => {
         onChangeText={(text) => {
           updateField(text);
         }}
+        maxLength={50}
         value={value}
         placeholder={'descrição'}
         testID={'descriptionInput'}
       />
+      <Text>*Máximo de 50 caracteres</Text>
     </S.Wrapper>
   );
 };

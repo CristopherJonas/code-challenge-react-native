@@ -26,4 +26,17 @@ describe('New Transaction screen -> input Transaction description', () => {
       expect(getByTestId('descriptionInput').props.value).toBe('test'),
     );
   });
+
+  test('transaction description must be max 50 characters', async () => {
+    const {getByTestId} = render(
+      <FormTransactionDescription
+        updateField={jest.fn((x) => x)}
+        value={'12345678901234567890123456789012345678901234567890'}
+      />,
+    );
+
+    await waitFor(() =>
+      expect(getByTestId('descriptionInput').props.maxLength).toBe(50),
+    );
+  });
 });
