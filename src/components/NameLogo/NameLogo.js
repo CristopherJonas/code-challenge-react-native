@@ -8,6 +8,7 @@ const NameLogo = () => {
       <S.Logo
         source={require('../../assets/images/magnetis-logo.jpg')}
         resizeMode="contain"
+        testID={'logo'}
       />
     </S.LogoWrapper>
   );
