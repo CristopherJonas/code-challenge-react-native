@@ -2,7 +2,7 @@
 
 Projeto realizado para criar e mostrar transações, além de mostrar o saldo final entre elas.
 
-![Alt Text](https://github.com/CristopherJonas/estudo-StyledComponents/blob/master/CVC-example.gif)
+![Alt Text](https://github.com/CristopherJonas/code-challenge-react-native/blob/master/usage.gif)
 
 ## Como instalar
 
