@@ -5,11 +5,11 @@ import * as S from './styles';
 const NameLogo = () => {
   return (
     <S.LogoWrapper>
-      <S.Logo
-        source={require('../../assets/images/magnetis-logo.jpg')}
+      {/* <S.Logo
+        source={require('../../assets/images/logo.jpg')}
         resizeMode="contain"
         testID={'logo'}
-      />
+      /> */}
     </S.LogoWrapper>
   );
 };

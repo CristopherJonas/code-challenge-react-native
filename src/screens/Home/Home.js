@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {SafeAreaView} from 'react-native';
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
 import CurrentBalance from '../../components/CurrentBalance/CurrentBalance';
-import NameLogo from '../../components/NameLogo/NameLogo';
 import {TransactionContext} from '../../Context';
 
 import * as S from './styles';
