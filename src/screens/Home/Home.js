@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <S.HomeScreenWrapper>
       <SafeAreaView>
-        <NameLogo />
         <CurrentBalance balance={state.updatedBalance} />
         <S.ButtonsWrapper>
           <ButtonLink

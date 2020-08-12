@@ -11,7 +11,6 @@ const NewTransactionConfirmationModal = ({
   return (
     <Modal isVisible={visible}>
       <S.ModalBackground>
-        <S.Logo source={require('../../assets/images/magnetis-m.jpg')} />
         <S.Title>Transação salva com sucesso!!</S.Title>
         <S.ButtonsWrapper>
           <S.ExitButtonBackground onPress={onPressExit}>

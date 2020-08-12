@@ -20,8 +20,7 @@ describe('Home screen', () => {
     const {getByTestId} = render(<Home />);
 
     await waitFor(
-      () => expect(getByTestId('logo')).not.toBeNull(),
-      expect(getByTestId('balanceValue')).not.toBeNull(),
+      () => expect(getByTestId('balanceValue')).not.toBeNull(),
       expect(getByTestId('linkBtnlist')).not.toBeNull(),
     );
   });

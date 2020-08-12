@@ -2,7 +2,6 @@
 
 Projeto realizado para criar e mostrar transações, além de mostrar o saldo final entre elas.
 
-![Alt Text](https://github.com/CristopherJonas/code-challenge-react-native/blob/master/usage.gif)
 
 ## Como foi desenvolvida
 O app foi feito usando react native, o controle de rotas foi feito com a versão 5 do reat-navigation, além de testes com Testing Library/React Native.
